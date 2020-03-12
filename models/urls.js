@@ -2,6 +2,7 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 const Counter = require('./counter');
 
+//Declaring collection schema
 const urlSchema = new Schema ({
     _id: {
         type: Number,
@@ -15,6 +16,7 @@ const urlSchema = new Schema ({
     }
 })
 
+//adding auto-incremented id before saving to database
 urlSchema.pre('save', async function() {
     if(!this.isNew) return;
 

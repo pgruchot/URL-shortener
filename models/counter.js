@@ -1,6 +1,7 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
+//declaring collection schema
 const counterSchema = new Schema({
     _id: {
         type: String,
@@ -12,6 +13,7 @@ const counterSchema = new Schema({
     },
 });
 
+//increment id
 counterSchema.static('increment', async function(counterName) {
     const count = await this.findByIdAndUpdate(
         counterName,
