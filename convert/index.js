@@ -61,6 +61,10 @@ router.get('/:shortenedUrl', (req, res) => {
             return res.json({
                 'url': match.url 
             });
+        else
+            return res.json({
+                'err': 'Cant find URL in database'
+            })
     });
 });
 
