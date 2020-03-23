@@ -7,7 +7,6 @@ export default function RedirectComponent( props ) {
     const [ errorMSG, setErrorMSG] = useState(null)
 
     useEffect(() => {
-        console.log(props.match.params)
         axios.get(`/convert/${props.match.params.id}`)
             .then((res) => {
                 if(!res.data.err)
