@@ -26,8 +26,6 @@ const base62 = {
 //Route used to save posted links in database and encode id
 router.post('/', (req,res) => {
 
-    console.log(req.body);
-
     const { link } = req.body;
 
     const newInsert = new Urls({
